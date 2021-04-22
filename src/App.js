@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Client from './data/apiClient.json'; //fetching json data
+import ClientStatus from './Components/ClientStatus';
+import ClientCreds from './Components/ClientCreds';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  state = {
+    clients:[],
+    value:'show'
+  }
+
+  //toggle visiblity on select
+  divstatus = (e) =>{
+    this.setState({value: e.target.value});
+  }
+
+  //Showing output with render function
+  render() {
+    return (
+      <div className="App container mt-5 mb-5 px-4">
+        {
+          Client.map((client,index) =>
+            <div key={index}>
+              <ClientStatus name={client.profile.displayName} divstatus={this.divstatus} />
+              <ClientCreds visible={this.state.value} clientId={client.clientId} clientArray={client}  />
+            </div>        
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;

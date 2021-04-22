@@ -1,0 +1,19 @@
+{
+  "apiClient": [
+    {
+      "id": 1,
+      "clientId": "pa17147c92fba4f5282e28059d9391791",
+      "enabled": true,
+      "clientSecrets": [
+        {
+          "name": "Secret",
+          "secretId": "37f4b43cb40f448f980c5f52118a8e27",
+          "type": "SharedSecret"
+        }
+      ],
+      "profile": {
+        "displayName": "Sign test client"
+      }
+    }
+  ]
+}
