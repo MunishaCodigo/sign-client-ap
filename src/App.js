@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Client from './data/apiClient.json'; //fetching json data
 import ClientStatus from './Components/ClientStatus';
 import ClientCreds from './Components/ClientCreds';
+import  UserIntraction from './Components/UserIntraction';
 import './App.css';
 
 
@@ -30,6 +31,7 @@ class App extends Component {
             <div key={index}>
               <ClientStatus name={displayName} divstatus={this.divstatus} />
               <ClientCreds visible={this.state.value} clientId={clientId} clientArray={client}  />
+              <UserIntraction />
             </div>        
         )}
       </div>

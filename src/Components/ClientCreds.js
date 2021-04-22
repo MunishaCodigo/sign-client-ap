@@ -23,7 +23,6 @@ toggleAddnewSecret() {
     addnewSecret: ! this.state.addnewSecret
     });
 }
-
 //add new secret from modal
 addSecret() {
     const [{clientSecrets}] = Client;
@@ -32,6 +31,7 @@ addSecret() {
         secretId: nanoid(),
         type : 'SharedSecret'
     }}));
+    localStorage.setItem('app-client', JSON.stringify(clientSecrets));
     console.log(clientSecrets);
 }
 
