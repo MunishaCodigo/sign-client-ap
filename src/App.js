@@ -17,15 +17,19 @@ class App extends Component {
     this.setState({value: e.target.value});
   }
 
+  
+
   //Showing output with render function
   render() {
+    var [{clientId , profile : {displayName}}] = Client; //Using distructing operator
+
     return (
       <div className="App container mt-5 mb-5 px-4">
         {
           Client.map((client,index) =>
             <div key={index}>
-              <ClientStatus name={client.profile.displayName} divstatus={this.divstatus} />
-              <ClientCreds visible={this.state.value} clientId={client.clientId} clientArray={client}  />
+              <ClientStatus name={displayName} divstatus={this.divstatus} />
+              <ClientCreds visible={this.state.value} clientId={clientId} clientArray={client}  />
             </div>        
         )}
       </div>
