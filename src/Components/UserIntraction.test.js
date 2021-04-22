@@ -9,9 +9,8 @@ afterEach(cleanup);
 test("it works", () => {
   const { getByText, getByLabelText } = render(<UserIntraction />);
 
-  getByText("TODOS");
-  getByLabelText("What needs to be done?");
-  getByText("Add #1");
+  getByLabelText("Name");
+  getByText("Add client secret");
 });
 
 
@@ -19,8 +18,8 @@ test("it works", () => {
 test("user-events allows users to add...", () => {
   const { getByText, getByLabelText } = render (<UserIntraction />);
 
-  const input = getByLabelText("What needs to be done?");
-  const button = getByText("Add #1");
+  const input = getByLabelText("Name");
+  const button = getByText("Add client secret");
 
   userEvent.type(input, "Hello User");
   userEvent.click(button);

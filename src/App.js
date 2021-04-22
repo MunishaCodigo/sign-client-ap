@@ -18,6 +18,10 @@ class App extends Component {
     this.setState({value: e.target.value});
   }
 
+  //test path to show test
+  handleClick(){
+   // <Redirect to='/Components/UserIntraction' />
+  }
   
 
   //Showing output with render function
@@ -31,7 +35,9 @@ class App extends Component {
             <div key={index}>
               <ClientStatus name={displayName} divstatus={this.divstatus} />
               <ClientCreds visible={this.state.value} clientId={clientId} clientArray={client}  />
-              <UserIntraction />
+
+              <button className="mt-5">Add secret in new page</button>
+              <UserIntraction></UserIntraction>
             </div>        
         )}
       </div>
